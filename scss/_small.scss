@@ -17,6 +17,7 @@ body {
     font-family: $defaultFont;
     font-weight: $lightWeight;
     min-width: 320px;
+    background: linear-gradient(to top, $greyColor 0%, #222 60%, black 100%);
 }
 
 
@@ -28,22 +29,35 @@ header {
     column-gap: $gutter;
     align-items: center; //vertically
     padding: .5rem $gutter;
+    margin: 0 0 $gutter 0; // bottom space below header; adjust as needed
     span {
         font-size: 1.6rem;
         font-weight: $lightWeight;
-        color: $primaryColor;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center; // center horizontally
+        width: 100%; // take full width of header cell
     }
+    a.phone-link {
+        margin-right: 0.5rem;
+    }
+
 } // end header
 
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #navWrapper {
     border-bottom: 1px solid $greyColor;
+    width: 100%;
 } // end nav wrapper
 nav {
+    
     ul {
         padding: 0;
         margin: 0;
+    
+        
     }
     ul li {
         list-style: none;
@@ -58,23 +72,17 @@ nav {
     padding: .6rem $gutter; // give horizontal padding for tap targets
         border-bottom: 2px solid transparent;
     }
+
+    ul li a:hover {
+        background-color: rgba(190, 61, 100, 0.6);
+        color: white;
+    }
     // active state when class is on the li: <li class="active"><a>...</a></li>
     ul li.active a {
-        background-color: blue;
+        background-color: #be3d64;
         color: white;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* --------------------------- MAIN --------------------------- */
 main {
@@ -89,6 +97,49 @@ main {
         color: #333;
         line-height: $leading;
     }
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: $gutter;
+        
+        
+    }
+
+    section div {
+        position: relative; // enable positioning context
+        width: 100%;
+        margin-bottom: $gutter;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 2px solid black;
+            display: block;
+        }
+
+        img:hover {
+            filter: brightness(85%);
+            transition: filter 0.3s ease;
+            border: 2px solid black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            background: rgb(218, 212, 212); // optional: semi-transparent background
+            padding: 0.5rem 1rem;
+            border-radius: px;
+            margin: 0;
+            width: 99%;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
 }// end main
 
 
@@ -102,6 +153,7 @@ footer {
     font-size: .85rem;
     padding: 1rem $gutter;
     color: $greyColor;
+    background-color: #222;
     text-align: center;
     line-height: $leading;
     a {color: $greyColor;}

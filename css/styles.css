@@ -316,6 +316,7 @@ body {
   font-family: "Spline Sans", sans-serif;
   font-weight: 300;
   min-width: 320px;
+  background: linear-gradient(to top, #ccc 0%, #222 60%, black 100%);
 }
 
 /* --------------------------- HEADER --------------------------- */
@@ -330,16 +331,25 @@ header {
        column-gap: 10px;
   align-items: center;
   padding: 0.5rem 10px;
+  margin: 0 0 10px 0;
 }
 header span {
   font-size: 1.6rem;
   font-weight: 300;
-  color: #1d295f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+header a.phone-link {
+  margin-right: 0.5rem;
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
 #navWrapper {
   border-bottom: 1px solid #ccc;
+  width: 100%;
 }
 
 nav ul {
@@ -358,8 +368,12 @@ nav ul li a {
   padding: 0.6rem 10px;
   border-bottom: 2px solid transparent;
 }
+nav ul li a:hover {
+  background-color: rgba(190, 61, 100, 0.6);
+  color: white;
+}
 nav ul li.active a {
-  background-color: blue;
+  background-color: #be3d64;
   color: white;
 }
 
@@ -375,6 +389,43 @@ main p {
   color: #333;
   line-height: 150%;
 }
+main section {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 10px;
+}
+main section div {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+main section div img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid black;
+  display: block;
+}
+main section div img:hover {
+  filter: brightness(85%);
+  transition: filter 0.3s ease;
+  border: 2px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+main section div h2 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  background: rgb(218, 212, 212);
+  padding: 0.5rem 1rem;
+  border-radius: px;
+  margin: 0;
+  width: 99%;
+  text-align: center;
+  font-size: 1.2rem;
+}
 
 /* --------------------------- FOOTER --------------------------- */
 #footerWrapper {
@@ -385,6 +436,7 @@ footer {
   font-size: 0.85rem;
   padding: 1rem 10px;
   color: #ccc;
+  background-color: #222;
   text-align: center;
   line-height: 150%;
 }
@@ -393,10 +445,19 @@ footer a {
 }
 
 @media only screen and (min-width: 35rem) {
+  header, nav, main {
+    max-width: 960px;
+    margin: auto;
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+  }
   /* NAVIGATION STUFF GOES HERE  */
   nav ul {
     padding: 0;
-    margin: 0;
+    margin: 0.1rem;
   }
   nav ul li {
     list-style: none;
@@ -411,8 +472,13 @@ footer a {
     border-bottom: 2px solid transparent;
   }
   nav ul li.active a {
-    background-color: blue;
+    background-color: #be3d64;
     color: white;
+  }
+  /* --------------------------- MAIN --------------------------- */
+  main section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media only screen and (min-width: 64rem) {
@@ -420,5 +486,15 @@ footer a {
     max-width: 960px;
     margin: auto;
   }
+  section {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+  }
   /* NAVIGATION STUFF GOES HERE  */
+  /* --------------------------- MAIN --------------------------- */
+  main section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
