@@ -24,26 +24,30 @@ body {
 /* --------------------------- HEADER --------------------------- */
 #headerWrapper {border-bottom: 1px solid $greyColor;}
 header {
-    display: grid;
-    grid-template-columns: 50px auto;
-    column-gap: $gutter;
-    align-items: center; //vertically
+    display: flex;
+    justify-content: space-between; // even distribution
+    align-items: center; // vertically center
     padding: .5rem $gutter;
-    margin: 0 0 $gutter 0; // bottom space below header; adjust as needed
+    margin: 0 0 $gutter 0;
+
     span {
         font-size: 1.6rem;
         font-weight: $lightWeight;
         color: white;
         display: flex;
         align-items: center;
-        justify-content: center; // center horizontally
-        width: 100%; // take full width of header cell
+        justify-content: center;
+        width: auto;
+        flex: 1; // allow span to grow
+        margin-left: 1rem;
     }
     a.phone-link {
         margin-right: 0.5rem;
+        color: white;
     }
+}
 
-} // end header
+ // end header
 
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */

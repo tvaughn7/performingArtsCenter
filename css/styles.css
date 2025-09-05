@@ -325,10 +325,8 @@ body {
 }
 
 header {
-  display: grid;
-  grid-template-columns: 50px auto;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0.5rem 10px;
   margin: 0 0 10px 0;
@@ -340,10 +338,13 @@ header span {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: auto;
+  flex: 1;
+  margin-left: 1rem;
 }
 header a.phone-link {
   margin-right: 0.5rem;
+  color: white;
 }
 
 /* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
