@@ -1,0 +1,25 @@
+/* NAVIGATION STUFF GOES HERE  */
+nav {
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    ul li {
+        list-style: none;
+        display: inline-block;
+        margin-right: $gutter;
+    }
+
+    ul li a {
+        color: $greyColor;
+        text-decoration: none;
+        display: block;
+        padding: .5rem 0;
+        border-bottom: 2px solid transparent;
+    }
+    // active state when class is on the li: <li class="active"><a>...</a></li>
+    ul li.active a {
+        background-color: blue;
+        color: white;
+    }
+}
