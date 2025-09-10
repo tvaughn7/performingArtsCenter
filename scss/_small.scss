@@ -29,12 +29,32 @@ header {
     align-items: center; // vertically center
     padding: .5rem $gutter;
     margin: 0 0 $gutter 0;
+    
+
+   
 
     span {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: $lightWeight;
         color: white;
         display: flex;
+    a.phone-link {
+        /* on small screens show an icon instead of the visible number
+           keep the number in the DOM (color: transparent) so screen readers can still access it */
+        color: transparent;
+        text-decoration: none;
+        position: relative;
+        padding-left: .25rem;
+        display: inline-block;
+    }
+    a.phone-link::before {
+        content: "\260E"; /* ☎ */
+        color: $primaryColor;
+        font-size: 1.1rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0;
+    }
         align-items: center;
         justify-content: center;
         width: auto;

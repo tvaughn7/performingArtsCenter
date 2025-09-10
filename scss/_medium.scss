@@ -4,6 +4,12 @@ header, nav, main {
     margin: auto;
 }
 
+/* restore phone text on medium+ screens */
+header a.phone-link {
+    color: white;
+}
+header a.phone-link::before { display: none; }
+
 section {
     display: grid;
     grid-template-columns: 1fr 3fr;
