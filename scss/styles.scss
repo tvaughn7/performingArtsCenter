@@ -4,6 +4,11 @@
 
 @import "small";
 
+// Tiny phones (e.g., iPhone SE ~320px wide)
+@media only screen and (max-width: 23.5rem) { // 376px
+	@import "tiny";
+}
+
 //35em is also 560px (if basefont is 16px)
 @media only screen and (min-width: 35rem) {
 	@import "medium";
