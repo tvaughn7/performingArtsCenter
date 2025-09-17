@@ -399,9 +399,9 @@ nav ul li.active a {
 /* --------------------------- MAIN --------------------------- */
 main h1 {
   padding: 1rem 10px 0.5rem 10px;
-  font-size: 1.5rem;
-  color: #7c1d47;
-  font-weight: 300;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
 }
 main p {
   padding: 0.5rem 10px;
